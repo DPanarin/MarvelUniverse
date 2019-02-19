@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: url(/assets/ny-skyline-wallpapers-and-screensavers-85817291.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 120px;
+  //filter: blur(3px) opacity(0.3);
+}

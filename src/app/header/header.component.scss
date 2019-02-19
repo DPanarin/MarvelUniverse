@@ -1,0 +1,18 @@
+.logo {
+  width: 213px;
+  height: 76px;
+}
+
+.bg-nav {
+  background-color: #afafaf;
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow:none !important;
+  border:1px solid #dc3545;
+}
+
+.active {
+  color: #dc3545 !important;
+}

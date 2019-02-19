@@ -1,0 +1,25 @@
+<div class="wrapper">
+
+  <div class="character" *ngFor="let item of itemsList">
+    <div class="image">
+      <img *ngIf="item['thumbnail']" [src]="getImagePath(item['thumbnail']?.path)" alt="">
+      <div class="on-hover">
+        <div class="text" [routerLink]="[item['id']]">Details...</div>
+      </div>
+    </div>
+    <div class="description">
+      <h5 class="name">{{item['name']||item['title']||item['firstName']}}</h5>
+      <div class="about" *ngIf="item['description']">{{item['description']}}</div>
+      <div class="details">
+        <a [routerLink]="[item['id']]">Details</a>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+<div class="nextPage">
+  <button [disabled]="!nextBlocked" class="btn-outline-danger" (click)="getNextPage()">Get more</button>
+</div>

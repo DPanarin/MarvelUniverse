@@ -1,0 +1,16 @@
+<div class="container">
+  <h4 class="title">{{creator.firstName}} {{creator.lastName}}</h4>
+  
+  <div class="image">
+    <img *ngIf="creator.thumbnail" [src]="getImagePath(creator.thumbnail?.path)" alt="">
+  </div>
+
+  <div class="comics" *ngIf="creator.comics.items.length" (click)="getDetails()">
+    <h5>Comics</h5>
+    <a *ngFor="let comics of creator.comics.items"
+       [routerLink]="['/','comics', getItemId(comics.resourceURI)]">
+      {{comics.name}}
+    </a>
+  </div>
+
+</div>

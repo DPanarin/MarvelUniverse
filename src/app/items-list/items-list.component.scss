@@ -1,0 +1,96 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  .character {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px;
+    width: 30%;
+    min-width: 300px;
+    max-height: 250px;
+    background-color: #fff;
+    border: 2px solid gainsboro;
+    display: flex;
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 18px 1px rgba(0,0,0,0.88);
+    }
+
+    .image {
+      position: relative;
+      .on-hover {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 100%;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        background-color: rgba(0,0,0,.6);
+        transition: .5s ease-in;
+        .text {
+          position: absolute;
+          color: white;
+          font-size: 20px;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          text-align: center;
+          cursor: pointer;
+        }
+      }
+      &:hover {
+        .on-hover {
+          bottom: 0;
+          height: 100%;
+          transition: .5s;
+        }
+      }
+    }
+    .description {
+      width: 100%;
+      position: relative;
+
+      .name {
+        text-align: center;
+      }
+
+      .about {
+        padding: 5px;
+        max-height: 60%;
+        overflow-y: hidden;
+        &:hover {
+          overflow-y: scroll;
+        }
+      }
+      .details {
+        margin: 5px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        a {
+          color: #dc3545;
+        }
+      }
+    }
+  }
+}
+.nextPage {
+  margin: 20px;
+  text-align: center;
+  .btn-outline-danger {
+    cursor: pointer;
+    width: 200px;
+    -webkit-border-radius: 4px !important;
+    -moz-border-radius: 4px !important;
+    border-radius: 4px !important;
+  }
+}

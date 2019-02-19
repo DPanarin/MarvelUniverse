@@ -1,0 +1,32 @@
+.container {
+  width: 90%;
+  background-color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 18px 1px rgba(0, 0, 0, 0.88);
+
+  .title {
+    text-align: center;
+    color: #dc3545;
+    background-color: gainsboro;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+  .image {
+    }
+
+  .comics, .stories, .events, .series, .characters {
+    margin-top: 20px;
+    text-align: center;
+    a {
+      display: block;
+      color: #dc3545;
+      text-decoration: none;
+    }
+  }
+}
+
+

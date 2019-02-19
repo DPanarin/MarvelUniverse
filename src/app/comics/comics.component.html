@@ -1,0 +1,60 @@
+<div class="container">
+  <h4 class="title">{{comics.title}}</h4>
+
+  <div class="image">
+
+    <div class="year-label">
+      {{getOnSale()}}
+    </div>
+
+    <img *ngIf="comics.thumbnail" [src]="getImagePath(comics.thumbnail?.path)" alt="">
+
+    <div class="price">
+      <p>Price:</p>
+      <h5>{{comics.prices[0].price}}</h5>
+    </div>
+
+    <div class="authors" *ngIf="comics.creators.items.length">
+      <div class="creators">Creators:</div>
+      <a href="" class="author"
+         *ngFor="let creator of comics.creators.items"
+         [routerLink]="['/','creators', getItemId(creator.resourceURI)]">{{creator.name}}</a>
+    </div>
+
+  </div>
+
+  <div class="description" *ngIf="comics.description">{{comics.description}}</div>
+
+  <div class="characters" *ngIf="comics.characters.items.length">
+    <h5>Characters</h5>
+    <a *ngFor="let character of comics.characters.items"
+       [routerLink]="['/','characters', getItemId(character.resourceURI)]">
+      {{character.name}}
+    </a>
+  </div>
+
+  <!--<div class="stories" *ngIf="comics.stories.items.length">-->
+    <!--<h5>Stories</h5>-->
+    <!--<a *ngFor="let story of comics.stories.items"-->
+       <!--[routerLink]="['/','stories', getItemId(story.resourceURI)]">-->
+      <!--{{story.name}}-->
+    <!--</a>-->
+  <!--</div>-->
+
+  <!--<div class="events" *ngIf="comics.events.items.length">-->
+    <!--<h5>Events</h5>-->
+    <!--<a *ngFor="let event of comics.events.items"-->
+       <!--[routerLink]="['/','events', getItemId(event.resourceURI)]">-->
+      <!--{{event.name}}-->
+    <!--</a>-->
+  <!--</div>-->
+
+  <!--<div class="series" *ngIf="comics.series.items.length">-->
+    <!--<h5>Series</h5>-->
+    <!--<a *ngFor="let item of comics.series.items"-->
+       <!--[routerLink]="['/','series', getItemId(item.resourceURI)]">-->
+      <!--{{item.name}}-->
+    <!--</a>-->
+  <!--</div>-->
+
+</div>

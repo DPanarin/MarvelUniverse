@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-nav fixed-top">
+
+  <a class="navbar-brand" href="#">
+    <img class="logo" src="/assets/Marvel_Comics_logo.png" alt="Marvel-logo">
+  </a>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <!--<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
+
+      <a class="nav-item nav-link" [routerLink]="['/', 'characters']" routerLinkActive="active">Characters</a>
+      <a class="nav-item nav-link" [routerLink]="['/', 'comics']" routerLinkActive="active">Comics</a>
+      <a class="nav-item nav-link" [routerLink]="['/', 'creators']" routerLinkActive="active">Creators</a>
+      <a class="nav-item nav-link" [routerLink]="['/', 'events']" routerLinkActive="active">Events</a>
+      <a class="nav-item nav-link" [routerLink]="['/', 'series']" routerLinkActive="active">Series</a>
+      <a class="nav-item nav-link" [routerLink]="['/', 'stories']" routerLinkActive="active">Stories</a>
+
+    </div>
+
+  </div>
+
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" [disabled]="true">Search</button>
+  </form>
+
+</nav>

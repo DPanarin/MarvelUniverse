@@ -1,0 +1,42 @@
+<div class="container">
+  <h4 class="name">{{character.name}}</h4>
+
+  <div class="image">
+    <img *ngIf="character.thumbnail" [src]="getImagePath(character.thumbnail?.path)" alt="">
+  </div>
+
+  <div class="description" *ngIf="character.description">{{character.description}}</div>
+
+  <div class="comics" *ngIf="character.comics.items.length" (click)="getDetails()">
+    <h5>Comics</h5>
+    <a *ngFor="let comics of character.comics.items"
+       [routerLink]="['/','comics', getComicsId(comics.resourceURI)]">
+      {{comics.name}}
+    </a>
+  </div>
+
+  <div class="stories" *ngIf="character.stories.items.length">
+    <h5>Stories</h5>
+    <a *ngFor="let story of character.stories.items"
+       [routerLink]="['/','stories', getComicsId(story.resourceURI)]">
+      {{story.name}}
+    </a>
+  </div>
+
+  <div class="events" *ngIf="character.events.items.length">
+    <h5>Events</h5>
+    <a *ngFor="let event of character.events.items"
+       [routerLink]="['/','events', getComicsId(event.resourceURI)]">
+      {{event.name}}
+    </a>
+  </div>
+
+  <div class="series" *ngIf="character.series.items.length">
+    <h5>Series</h5>
+    <a *ngFor="let item of character.series.items"
+       [routerLink]="['/','series', getComicsId(item.resourceURI)]">
+      {{item.name}}
+    </a>
+  </div>
+
+</div>
